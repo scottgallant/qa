@@ -1,0 +1,24 @@
+{{ partial "head" . }}
+
+<div class="container">
+{{ range .Data.Pages }}
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-1">
+      <div class="vote" style="padding: 0; font-size: 12px;">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+        <div class="vote-count">
+            {{ .Params.votes }}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="question">
+        <a href="{{ .URL }}">{{ .Title }}</a> 
+      </div>
+    </div>
+  </div>
+{{ end }}
+</div>
+</ul>
+
+{{ partial "footer" . }}

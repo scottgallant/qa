@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="{{ $.Site.BaseURL }}">
+    <title>{{ if .Page.Title }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
+    <meta name="author" content="{{ $.Param "author" }}">
+    <meta name="description" content="{{ $.Param "description" }}">
+    <link rel="stylesheet" href="{{ "css/styles.min.css" | relURL }}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header class="nav-bar">
+        <div class="logo"><a href="/"><img src="/img/forestry-logo-sm.png" alt="" style="width: 100px;"></a></div>
+        <div class="account">
+          <img src="https://res.cloudinary.com/demo/image/upload/w_600,h_600,c_crop,g_face,r_max/w_20/lady.jpg" alt="">
+          Scott</div>
+      </header>

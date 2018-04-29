@@ -1,0 +1,76 @@
+{{ partial "head" . }}
+
+{{/* Add your site or webapp content here */}}
+
+<div class="container single-question">
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="vote">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+        <div class="vote-count">
+          {{ .Params.votes }}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="question">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Content }}</p>
+      </div>
+    </div>
+  </div>
+
+  {{ if .Params.answers }}
+  {{if gt (len .Params.answers) 0}}
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <h3 style="margin-top: 0;">Answers</h3>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{ range .Params.answers }}
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="vote answer-votes">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+        <div class="vote-count">
+          {{ .votes }}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-8">
+        <div class="answers">
+            <a href="#">{{ .user }}</a> -
+            {{ .text }}
+            <div class="actions">
+              <a href="#">Reply</a>
+            </div>
+            <div class="replies">
+            {{ range .replies }}
+              <div class="col-lg-offset-1">
+                <a href="#">{{ .user }}</a> -
+                {{ .text }}
+              </div>
+            {{ end }}
+            </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <h3>Suggest an Answer</h3>
+        <div class="submit">
+          <form>
+            <textarea name="question"></textarea>
+            <button type="button" name="button" class="button button-success button-large button-wide">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{{ partial "footer" . }}
