@@ -33,6 +33,12 @@ body {
 
   .account {
     align-self: flex-end;
+    font-size: 12px;
+
+    img {
+      vertical-align: middle;
+      margin-right: .5rem;
+    }
   }
 }
 
